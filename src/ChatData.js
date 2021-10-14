@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { ChatsContext, ShortenName, useWindowSize } from "./utills";
+import { ChatsContext, ShortenName } from "./utills";
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 import PanoramaOutlinedIcon from '@mui/icons-material/PanoramaOutlined';
 import AttachFileOutlinedIcon from '@mui/icons-material/AttachFileOutlined';
@@ -7,7 +7,6 @@ import { Button } from "@mui/material";
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 
 const ChatData = ()=>{
-    const {width} = useWindowSize();
     const { currentChat } = useContext(ChatsContext);
 
     const [open,setOpen] = useState(false)
@@ -23,7 +22,7 @@ const ChatData = ()=>{
     return <div className={`chat-data ${!open?'chat-data-close':''}`}>
         <div className="chat-data-top"
             style={{backgroundColor:currentChat.color}}
-            onClick={toggle} onClick={toggle}>
+            onClick={toggle}>
 
             <div className="chat-data-arrow"><KeyboardArrowLeftIcon/></div>
 
@@ -61,7 +60,7 @@ const ChatData = ()=>{
                     <PanoramaOutlinedIcon/> bot_face.jpg 
                 </div>
 
-                <a href="#">View All</a>
+                <a href="/">View All</a>
             </div>
         </div>
 
